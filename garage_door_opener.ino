@@ -13,9 +13,6 @@
 #include <FS.h>
 #include "SPIFFS.h"
 
-const bool IS_OPEN = false;
-const char DATABASE_PATH[] = "/database.txt";
-
 /**
  * Set WiFi Credentials
  */
@@ -29,6 +26,12 @@ const char *password = "<wifi_secret>";
  */
 
 const char POST_SECRET[] = "<some_madeup_secret_for_pseudo_security>";
+
+/**
+ * Set database SPIFFS path
+ */
+
+const char DATABASE_PATH[] = "/database.txt";
 
 /**
  * Create AsyncWebServer object on port 80
@@ -148,11 +151,13 @@ void setup()
             // CHANGE PIN VOLTAGE HERE
             //
             request->send(200, "text/plain", "true");
+            db.close();
             return;
           }
           else
           {
             request->send(200, "text/plain", "false");
+            db.close();
             return;
           }
         }
@@ -180,11 +185,13 @@ void setup()
             // CHANGE PIN VOLTAGE HERE
             //
             request->send(200, "text/plain", "true");
+            db.close();
             return;
           }
           else
           {
             request->send(200, "text/plain", "false");
+            db.close();
             return;
           }
         }
