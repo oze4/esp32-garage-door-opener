@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garage Door</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div id="alert-error" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>ERROR!</strong> <span id="alert-error-message"></span>
+        <button id="alert-error-close-btn" type="button" class="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="alert alert-light text-center" role="alert">
+            Garage door is:
+            <h1 id="garage-door-status">-</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-12 mt-5">
+					<button
+						id="open-garage-door-btn"
+            type="button"
+            class="btn btn-success shadow"
+            style="width: 80%; height: 6rem;"
+          >
+            OPEN GARAGE DOOR
+          </button>
+        </div>
+        <div class="col-sm-12 mt-5">
+					<button
+						id="close-garage-door-btn"
+            type="button"
+            class="btn btn-danger shadow"
+            style="width: 80%; height: 6rem;"
+          >
+            CLOSE GARAGE DOOR
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
